@@ -17,7 +17,7 @@ public class Modulet implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("modulet");
 	public static final Mamaliga mamaliga = new Mamaliga(new FabricItemSettings());
 	public static final Block mamaligablock = new Mamaligablock(FabricBlockSettings.create().strength(1f));
-
+	//TODO:adaugat retete pentru toate itemele :D(blocul de mamaliga se face din 4 mamaliga
 	@Override
 	public void onInitialize() {
 		Registry.register(Registries.ITEM, new Identifier("modulet", "mamaliga"), mamaliga);
