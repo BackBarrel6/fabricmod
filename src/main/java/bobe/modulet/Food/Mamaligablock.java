@@ -11,9 +11,12 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Mamaligablock extends Block {
-public static final IntProperty QATE= IntProperty.of("qate",1,4);//quantity ate
+	public static final Logger LOGGER = LoggerFactory.getLogger("modulet");
+public static final IntProperty QATE= IntProperty.of("qate",0,4);//quantity ate
 	public Mamaligablock(AbstractBlock.Settings settings) {
 		super(settings);
 		setDefaultState(getDefaultState().with(QATE, 4));
@@ -23,13 +26,20 @@ protected void appendProperties(StateManager.Builder<Block,BlockState> builder){
 }
 	@Override
 	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+
+		player.heal(6F);
+		LOGGER.info("Used mamaliga");
+		world.setBlockState(pos, state.with(QATE,state.get(QATE)-1));
 		if(state.get(QATE)==0)
 		{
 			world.removeBlock(pos,true);
 			return ActionResult.SUCCESS;
 		}
-		player.heal(6F);
-		world.setBlockState(pos, state.with(QATE,state.get(QATE)-1));
+		if (player != null) {
+			player.heal(6F);
+		} else {
+			LOGGER.info("Player is null");
+		}
 		return ActionResult.SUCCESS;
 	}
 }
