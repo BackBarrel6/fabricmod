@@ -23,7 +23,7 @@ protected void appendProperties(StateManager.Builder<Block,BlockState> builder){
 }
 	@Override
 	public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-		if(state.get(QATE)==1)
+		if(state.get(QATE)==0)
 		{
 			world.removeBlock(pos,true);
 			return ActionResult.SUCCESS;
