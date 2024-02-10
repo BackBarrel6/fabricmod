@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "qate=0": { "model": "minecraft:block/cake_slice6" },
+    "qate=1": { "model": "minecraft:block/cake_slice5" },
+    "qate=2": { "model": "minecraft:block/cake_slice4" },
+    "qate=3": { "model": "minecraft:block/cake_slice3" },
+    "qate=4": { "model": "minecraft:block/cake_slice2" },
+    "qate=5": { "model": "minecraft:block/cake_slice1" },
+    "qate=6": { "model": "minecraft:block/cake" }
+  }
+}
+

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cake",
+  "textures": {
+    "all": "modulet:block/cake"
+  }
+}
+
